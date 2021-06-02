@@ -7,7 +7,7 @@
 /*
   Create a function named addThree which accepts a number, adds 3 to the number and return the new value.
 */
-
+// checking 
 /*
   Create a function named addFive which accepts a number, adds 5 to the number and return the new value.
 */
