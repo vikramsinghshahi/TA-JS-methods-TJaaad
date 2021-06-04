@@ -44,14 +44,16 @@ console.log(message.includes("Is"));
 
 console.log(message.slice(3 , 6).includes("you"));
 
-
+console.log(message.slice(3 , 6) ==="you");
 // Check and log whether the word from index 7 to 8 is "a" or not
 console.log(message.slice(7 , 8).includes("a"));
 
+console.log(message.slice(7 , 8) === "a");
 // Check and log whether the last 3 character in message is "no!" or not (you can use -3 in slice)
 
 console.log(message.slice(-3).includes("no!"));
 
+console.log(message.slice(-3) ==="no!");
 // Check and log whether the last 5 character in message is "no!" or not
 
 console.log(message.slice(-5).includes("no!"));
@@ -85,10 +87,17 @@ console.log(newMessage);
 
 // Log all the characters from the message variable (you can user for..of loop on string)
 
-for(char of message){
+for(let char of message){
     console.log(char);
 }
 
 // Split all the words in message (split by " " space) and store it in a variable messageArray
 
+let messageArray = message.split(" ");
+
 // Log all the words of messageArray
+
+
+for (let words of messageArray ){
+    console.log(words);
+}
