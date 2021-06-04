@@ -30,7 +30,9 @@ console.log(fruits[1]);
 
 // If the element at 0 index is undefined and index 1 is 'Banana' shift all the values to one lower index (use shift method)
 
-fruits.shift
+fruits.shift()
+
+console.log(fruits)
 
 // Add a new element to the start ('Guava') and shift the index of all other to one higher value
 
