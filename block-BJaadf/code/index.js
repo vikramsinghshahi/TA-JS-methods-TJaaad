@@ -36,6 +36,13 @@ console.log(fruits)
 
 // Add a new element to the start ('Guava') and shift the index of all other to one higher value
 
+fruits[0] = "Guava";
+
+console.log(fruits);
+
+fruits.unshift();
+
+console.log(fruits)
 // Add a new element to the start ('Dragon Fruit') and shift the index of all other to one higher value
 
 // Log true or false based on the value at index 0 and 1 is 'Dragon Fruit' and 'Guava' or not
