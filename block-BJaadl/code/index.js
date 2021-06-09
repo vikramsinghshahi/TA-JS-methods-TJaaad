@@ -11,7 +11,22 @@ let words = [
 
 // - Write a function findLongestWord that takes an array of words and returns the longest word from the array. (Use above array "words" to test it). If there are 2 with the same length, it should return the first occurrence.
 
+function findLongestWord(word){
+   return word.length > max
+}
+
+
+words.map(cb)
+
+
+
+
+
+
 // - Convert the above array "words" into an array of length of word instead of word.
+
+
+
 
 // - Create a new array that only contains word with atleast one vowel.
 
