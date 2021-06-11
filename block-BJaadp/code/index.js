@@ -106,20 +106,37 @@ const fruitBasket = [
   'fig',
 ];
 
-/* 
 
 
 
-Use the fruitBasket array to create an object where key will be the fruit and value will be the number of times
-that fruit has appeared in the array. Store it in new variable fruitsObj
+//Use the fruitBasket array to create an object where key will be the fruit and value will be the number of times
+//hat fruit has appeared in the array. Store it in new variable fruitsObj
+
+let finalFruitsObj = fruitBasket.reduce((acc ,cv)=>{
+  if( acc[cv]){
+    acc[cv] = acc[cv] + 1
+  } else{
+    acc[cv] = 1;
+  }
+  return acc
+}
+
+, {})
+
+console.log(finalFruitsObj)
+
+
+//Output: 
+//{banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1}
+
+Object.keys(finalFruitsObj).reduce((acc,cv) =>{
+  acc = acc.concat([[cv, finalFruitsObj[cv]]])
+  return acc
+} , [])
 
 
 
 
-
-Output: 
-{banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1}
-*/
 
 /* 
 
@@ -140,13 +157,16 @@ const data = [
 
 // Using reduce flat data array
 
+let final =data.reduce((acc , cv) =>{
+  acc = acc.concat(cv)
+
+  return acc
+} , [])
+
+console.log(final)
 
 
-
-
-
-
-let flatData = data.flat(Infinity)
+/*let flatData = data.flat(Infinity)
 
 let finalData = flatData.reduce((acc, cv)=>{
   acc = acc + cv
@@ -154,7 +174,7 @@ let finalData = flatData.reduce((acc, cv)=>{
 }, 0)
 
 
-console.log(finalData)
+console.log(finalData)*/
 
 
 
@@ -167,13 +187,27 @@ const dataTwo = [
   [[10, 11], 12],
 ];
 
-let flatDataTwo = dataTwo.flat(Infinity);
+/*let finalData =[];
 
-console.log(flatDataTwo.reduce((acc , cv) =>{
-  acc = acc + cv
+function cb(dataTwo){
+  for( let i = 0 ; i < dataTwo.length; i++){
+    finalData = finalData + dataTwo[i]
+  
+  }
+  return finalData
+}
+
+console.log(cb(dataTwo));*/
+
+let flatDataTwo = dataTwo.reduce((acc ,cv ) =>{
+
+
+  acc = acc.concat(cv.flat(Infinity))
   return acc
-},0))
+} , [])
 
+
+//console.log(flatDataTwo)
 // Using reduce flat dataTwo array
 
 /*
@@ -249,7 +283,19 @@ EXAMPLE:
   ...
 */
 
-/*let pipeline2 = [
+let finalPipeline = pipeline.reduce((acc , cv) =>{
+  acc = cv(acc);
+  return acc;
+
+} , 3)
+
+console.log(finalPipeline);
+
+
+
+
+
+let pipeline2 = [
   increment,
   half,
   double,
@@ -261,6 +307,14 @@ EXAMPLE:
   half,
   increment,
   triple,
-];*/
+];
 
 // Find the output using pipeline2 the initial value if 8
+
+let finalPipeline2 = pipeline2.reduce((acc , cv) =>{
+  acc = cv(acc);
+  return acc;
+
+} , 8)
+
+console.log(finalPipeline2);
